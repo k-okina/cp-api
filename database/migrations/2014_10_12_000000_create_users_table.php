@@ -18,6 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->unsignedBigInteger('facebook_id');
+            $table->unsignedBigInteger('twitter_id');
+            $table->unsignedBigInteger('instagram_id');
+            $table->unsignedBigInteger('tumblr_id');
             $table->rememberToken();
             $table->timestamps();
         });
