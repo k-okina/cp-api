@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserDmTable extends Migration
+class CreateUserCommunity extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateUserDmTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_dm', function (Blueprint $table) {
+        Schema::create('community_user', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('community_id');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateUserDmTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_dm');
+        Schema::dropIfExists('community_user');
     }
 }

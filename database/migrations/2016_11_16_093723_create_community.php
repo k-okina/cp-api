@@ -15,7 +15,6 @@ class CreateCommunity extends Migration
     {
         Schema::create('community', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
             $table->string('title');
             $table->string('thumbnail_url');
             $table->text('description');
