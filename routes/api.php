@@ -13,22 +13,24 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['prefix' => '/api'], function () {
+// Route::get('e')
 
-    // for auth
-    Route::post('auth/register', 'Auth\AuthController@register');
+// Route::group(['prefix' => '/api'], function () {
 
-    Route::get('auth/login', 'Auth\LoginController@login');
-    Route::get('auth/login/google', 'Auth\LoginController@login');
-    Route::get('auth/login/twitter', 'Auth\LoginController@login');
+    // // for auth
+    // Route::post('auth/register', 'Auth\AuthController@register');
 
-    Route::get('auth/logout', 'Auth\AuthController@logout');
+    // Route::get('auth/login',            'Auth\LoginController@login');
+    // Route::get('auth/login/google',     'Auth\LoginController@login');
+    // Route::get('auth/login/twitter',    'Auth\LoginController@login');
 
-    Route::get('auth/fb/oauth2callback', 'Auth\AuthController@facebookOauth2Callback');
-    Route::get('auth/tw/oauth2callback', 'Auth\AuthController@twitterOauthCallback');
+    // Route::get('auth/logout', 'Auth\AuthController@logout');
 
-    Route::group(['prefix' => '/v1'], function () {
+    // Route::get('auth/google/oauth2callback',    'Auth\AuthControliller@facebookOauth2Callback');
+    // Route::get('auth/twitter/oauth2callback',   'Auth\AuthController@twitterOauthCallback');
 
-    })->middleware('auth:api');
+    // Route::group(['prefix' => '/v1'], function () {
 
-});
+    // })->middleware('auth:api');
+
+// });
