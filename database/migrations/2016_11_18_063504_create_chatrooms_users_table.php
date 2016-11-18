@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSingleChatroomsTable extends Migration
+class CreateChatroomUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSingleChatroomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('single_chatrooms', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('chatrooms_users', function (Blueprint $table) {
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('chatroom_id');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateSingleChatroomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('single_chatrooms');
+        Schema::dropIfExists('chatrooms_users');
     }
 }
