@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileTable extends Migration
+class CreateCommunities extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('communities', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->string('title');
             $table->string('thumbnail_url');
-            $table->string('tweet');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('communities');
     }
 }

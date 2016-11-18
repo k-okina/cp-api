@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePortfolio extends Migration
+class CreatePortfolios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePortfolio extends Migration
      */
     public function up()
     {
-        Schema::create('portfolio', function (Blueprint $table) {
+        Schema::create('portfolios', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('img_url');
@@ -29,6 +29,6 @@ class CreatePortfolio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portfolio');
+        Schema::dropIfExists('portfolios');
     }
 }
