@@ -14,10 +14,8 @@ class CreateSingleChatroomUserTable extends Migration
     public function up()
     {
         Schema::create('single_chatroom_user', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('single_chatroom_id');
-            $table->timestamps();
         });
     }
 
